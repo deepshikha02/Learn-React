@@ -17,5 +17,9 @@ const greetingJsx = <h1>jsx hello world Current Date : {getCurrentDate()}</h1>;
 
 // jsx also completely supports javascript. 
 // Read about babel script too
-ReactDOM.render(greetingJsx, document.getElementById('root'));
+// ReactDOM.render(greetingJsx, document.getElementById('root'));
+// ReactDOM.render(<div>greetingJsx<App/></div>, document.getElementById('root'));
+
+ReactDOM.render(<App/>, document.getElementById('root'));
+
 registerServiceWorker();
