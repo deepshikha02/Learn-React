@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import Intro from '../Intro';
+import 'whatwg-fetch';
 
 
 class App extends Component {
@@ -11,12 +12,20 @@ class App extends Component {
   };
 
   componentDidMount(){
-    const series = ["vikings","got"];
-    setTimeout(() => {
-      this.setState({
-       data : series
-      });
-    }, 2000);
+    // const series = ["vikings","got"];
+    // setTimeout(() => {
+    //   this.setState({
+    //    data : series
+    //   });
+    // }, 2000);
+
+    fetch('http://api.tvmaze.com/search/shows?q=Vikings')
+    .then(response => response.json())
+    .then(json => {console.log(json)
+    this.setState({
+      data : json
+    });
+    });
   }
 
   render() {
