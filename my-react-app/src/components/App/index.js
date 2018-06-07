@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import Intro from '../Intro';
-import Series from '../../containers/series';
+import Main from '../Main';
+
+// import Series from '../../containers/series';
 import 'whatwg-fetch';
 
 
@@ -15,8 +17,8 @@ class App extends Component {
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
           <h1 className="App-title">My App</h1>
         </header>
-        <Intro message="custom message using props" />
-        <Series></Series>
+        
+      <Main />
       </div>
     );
   }

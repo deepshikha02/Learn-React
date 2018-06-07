@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import SeriesList from '../../components/SeriesList';
+import Loader from '../../components/Loader';
+import Intro from '../../components/Intro';
 
 class Series extends Component {
 
@@ -31,17 +33,18 @@ class Series extends Component {
         const { data, seriesName, isFetching} = this.state;
         return (
             <div>
+            <Intro message="custom message using props" />
             <div> series container </div>
             {
                 data.length === 0 && seriesName.trim() === '' && 
                 <p>Please enter series name into the input</p>
             }
             {
-                data.length === 0 && seriesName.trim() !== '' && 
+                data.length === 0 && seriesName.trim() !== '' && !isFetching &&
                 <p> Series not found </p>
             }
             {
-                isFetching && <p>Loading...</p>
+                isFetching &&  <Loader></Loader>
             }
             {
                 !isFetching && <p>Loaded</p>
