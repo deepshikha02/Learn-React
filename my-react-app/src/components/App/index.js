@@ -10,6 +10,15 @@ class App extends Component {
     data : []
   };
 
+  componentDidMount(){
+    const series = ["vikings","got"];
+    setTimeout(() => {
+      this.setState({
+       data : series
+      });
+    }, 2000);
+  }
+
   render() {
     return (
       <div className="App">
