@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-const Intro = (props)=> (
-  <p className="App-intro">
-      First functional component
-  </p>
-)
+import Intro from './components/Intro';
 
 
 class App extends Component {
@@ -17,7 +12,7 @@ class App extends Component {
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
           <h1 className="App-title">My App</h1>
         </header>
-        <Intro />
+        <Intro message="custom message using props" />
       </div>
     );
   }
